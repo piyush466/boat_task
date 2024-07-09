@@ -27,7 +27,7 @@ class Test_product_filter:
         try:
             self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
         except Exception as E:
-            print("Exception Occure:- ", E)
+            print("Exception Occure:- ")
         self.driver.switch_to.default_content()
         self.boat.click_on_filter()
         self.boat.click_on_payback()

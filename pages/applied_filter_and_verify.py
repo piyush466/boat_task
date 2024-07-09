@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -23,11 +25,14 @@ class Boat_e2e:
 
 
     def click_on_category(self):
-        # try:
-        #     self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
-        # except Exception as E:
-        #     print("Exception Occure:- ", E)
+        self.driver.switch_to.frame("ctIframe")
+        try:
+            self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
+        except Exception as E:
+            print("Exception Occure:- ")
+        self.driver.switch_to.default_content()
         self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_category_xpath))).click()
+
 
 
     def selecting_the_earbuds(self):
@@ -39,6 +44,10 @@ class Boat_e2e:
 
 
     def select_filter(self):
+        # try:
+        #     self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
+        # except Exception as E:
+        #     print("Exception Occure:- ")
         self.wait.until(EC.element_to_be_clickable((By.XPATH, self.select_price_filter_xpath))).click()
 
     def enter_the_price(self,from_price,to_price):
