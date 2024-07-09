@@ -41,7 +41,8 @@ class Boat_e2e:
 
 
     def click_on_filter(self):
-        self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_filter_xpath))).click()
+        self.filter = self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_filter_xpath)))
+        self.driver.execute_script("arguments[0].click();", self.filter)
 
 
     def select_filter(self):
