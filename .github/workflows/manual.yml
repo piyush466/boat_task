@@ -1,54 +1,49 @@
-# This is a basic workflow that is manually triggered
+# This workflow will upload a Python Package using Twine when a release is created
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
 
-name: Manual workflow
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
+name: Upload Python Package
+
 on:
-  push:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  push:
+    branches: [master]
+
 jobs:
-  test01:
+  deploy:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out this repo
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        
+        
 
-      # Setup Python
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.11'
+    - name: Run PyTest
+      run:  pytest --html=./pytest-report/report.html --self-contained-html
 
-      # Install necessary packages from requirements.txt
-      - name: Install dependencies
-        run:
-          pip install --upgrade pip
-          pip install -r requirements.txt
+#    - name: Run PyTest
+#      run: pytest --html=./pytest-report/report.html --self-contained-html
+#      env:
+#          EMAIL: ${{ secrets.EMAIL }}
+#          MOBILE_NO: ${{ secrets.MOBILE_NO }}
 
-      # Run the PyTest script
-      - name: Run PyTest
-        run: pytest --html=./pytest-report/report.html --self-contained-html
-
-
-      - name: Upload test artifacts
-        uses: actions/upload-artifact@v2
-        if: ${{ always() }}
-        with:
-          name: test-results
-          path: pytest-report/report.html
-          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to warn
+#    - name: Upload test artifacts
+#      uses: actions/upload-artifact@v2
+#      if: ${{ always() }}
+#      with:
+#          name: test-results
+#          path: pytest-report/report.html
+#          if-no-files-found: error
