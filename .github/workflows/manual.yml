@@ -29,21 +29,15 @@ jobs:
       run:
         pip install -r requirements.txt
         
-        
 
     - name: Run PyTest
       run:  pytest --html=./pytest-report/report.html --self-contained-html
 
-#    - name: Run PyTest
-#      run: pytest --html=./pytest-report/report.html --self-contained-html
-#      env:
-#          EMAIL: ${{ secrets.EMAIL }}
-#          MOBILE_NO: ${{ secrets.MOBILE_NO }}
 
-#    - name: Upload test artifacts
-#      uses: actions/upload-artifact@v2
-#      if: ${{ always() }}
-#      with:
-#          name: test-results
-#          path: pytest-report/report.html
-#          if-no-files-found: error
+    - name: Upload test artifacts
+      uses: actions/upload-artifact@v2
+      if: ${{ always() }}
+      with:
+          name: test-results
+          path: pytest-report/report.html
+          if-no-files-found: error
