@@ -6,8 +6,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture()
 def setup():
-    options = Options()
-    options.add_argument("--headless")
+    # options = Options()
+    # options.add_argument("--headless")
     driver = webdriver.Chrome()
     driver.get("https://www.boat-lifestyle.com/")
     driver.implicitly_wait(10)
