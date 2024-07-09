@@ -21,7 +21,7 @@ class Test_product_filter:
         self.boat.enter_the_price("500","1000")
         self.boat.click_on_apply_filter()
         self.boat.refresh_page()
-        self.driver.execute_script("window.scrollBy(1000, 0)")
+        self.driver.execute_script("window.scrollBy(2000, 0)")
         self.driver.switch_to.frame("ctIframe")
         try:
             self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
