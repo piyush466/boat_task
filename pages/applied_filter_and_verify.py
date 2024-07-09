@@ -23,6 +23,10 @@ class Boat_e2e:
 
 
     def click_on_category(self):
+        # try:
+        #     self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
+        # except Exception as E:
+        #     print("Exception Occure:- ", E)
         self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_category_xpath))).click()
 
 
