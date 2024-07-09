@@ -24,16 +24,19 @@ class Boat_e2e:
         self.wait = WebDriverWait(driver,10)
 
     def click_on_category(self):
-        self.iframe = self.wait.until(EC.visibility_of_element_located((By.ID, "ctIframe")))
-        self.driver.switch_to.frame(self.iframe)
+        time.sleep(4)
         try:
+            self.iframe = self.wait.until(EC.visibility_of_element_located((By.ID, "ctIframe")))
+            self.driver.switch_to.frame(self.iframe)
             self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[id='wzrk-confirm']"))).click()
         except Exception as E:
            print("Exception:- ", E)
         self.driver.switch_to.default_content()
         self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_category_xpath))).click()
 
+
     def selecting_the_earbuds(self):
+        self.driver.save_screenshot("product3.png")
         self.wait.until((EC.element_to_be_clickable((By.XPATH, self.select_earbuds_xpath)))).click()
 
 
@@ -42,7 +45,9 @@ class Boat_e2e:
 
 
     def select_filter(self):
-        self.wait.until(EC.presence_of_element_located((By.XPATH, self.select_price_filter_xpath))).click()
+        time.sleep(2)
+        self.element = self.wait.until(EC.visibility_of_element_located((By.XPATH, self.select_price_filter_xpath)))
+        self.driver.execute_script("arguments[0].click();", self.element)
 
     def enter_the_price(self,from_price,to_price):
         self.wait.until(EC.element_to_be_clickable((By.ID, self.select_from_price_id))).send_keys(from_price)

@@ -14,8 +14,8 @@ class Test_product_filter:
         self.driver = setup
         self.wait = WebDriverWait(self.driver, 10)
         self.boat = Boat_e2e(self.driver)
-        self.driver.set_page_load_timeout(10)
         self.boat.click_on_category()
+        self.driver.implicitly_wait(10)
         self.boat.selecting_the_earbuds()
         self.boat.click_on_filter()
         self.boat.select_filter()
