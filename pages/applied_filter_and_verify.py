@@ -23,18 +23,15 @@ class Boat_e2e:
         self.driver = driver
         self.wait = WebDriverWait(driver,10)
 
-
     def click_on_category(self):
         self.iframe = self.wait.until(EC.visibility_of_element_located((By.ID, "ctIframe")))
         self.driver.switch_to.frame(self.iframe)
         try:
             self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button[id='wzrk-confirm']"))).click()
         except Exception as E:
-            print("Exception Occure:- ")
+           print("Exception:- ", E)
         self.driver.switch_to.default_content()
         self.wait.until(EC.element_to_be_clickable((By.XPATH, self.click_on_category_xpath))).click()
-
-
 
     def selecting_the_earbuds(self):
         self.wait.until((EC.element_to_be_clickable((By.XPATH, self.select_earbuds_xpath)))).click()
