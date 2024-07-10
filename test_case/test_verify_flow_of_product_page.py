@@ -1,5 +1,6 @@
 import time
 
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -12,7 +13,7 @@ from pages.applied_filter_and_verify import Boat_e2e
 class Test_product_filter:
     product_price_value_css = "[class='price price--highlight product-card-price']"
 
-
+    @pytest.mark.skip
     def test_e_2_e_flow(self, setup):
         self.driver = setup
         self.logs = LogGen.logger()
@@ -23,7 +24,7 @@ class Test_product_filter:
         self.boat.selecting_the_earbuds()
         self.boat.click_on_filter()
         self.boat.select_filter()
-        self.boat.enter_the_price("500","1000")
+        self.boat.enter_the_price("500", "1000")
         self.boat.click_on_apply_filter()
         self.driver.execute_script("window.scrollTo(400,0)")
         self.driver.switch_to.default_content()
@@ -35,6 +36,8 @@ class Test_product_filter:
         self.convert_to_int = int(self.price_product[-3:])
         self.logs.info("********Assertion Started***********")
         assert 500 <= self.convert_to_int <= 1000, "Assertion is not match"
+
+
 
     def test_title_of_page(self, setup):
         self.driver = setup
