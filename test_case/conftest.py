@@ -14,18 +14,11 @@ def setup():
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=options)
     driver.get("https://www.boat-lifestyle.com/")
     driver.implicitly_wait(10)
     driver.maximize_window()
     driver.save_screenshot("/Screenshot/after.png")
-
-    driver = webdriver.Firefox(options=options)
-    driver.get("https://www.boat-lifestyle.com/")
-    driver.implicitly_wait(10)
-    driver.maximize_window()
-    driver.save_screenshot("screenshots/after.png")
-
 
     yield driver
     driver.quit()
