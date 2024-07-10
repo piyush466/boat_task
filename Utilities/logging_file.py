@@ -5,7 +5,7 @@ class LogGen:
     @staticmethod
     def logger():
         logger = logging.getLogger(__name__)
-        filehandle = logging.FileHandler("generate.log")
+        filehandle = logging.FileHandler(r"./Logs/generate.log")
         formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
         filehandle.setFormatter(formatter)
         logger.addHandler(filehandle)
