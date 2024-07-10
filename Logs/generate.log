@@ -58,3 +58,23 @@
 2024-07-10 10:34:21,336 - Utilities.logging_file - INFO - ********select_the_payback_filter_value************
 2024-07-10 10:34:21,354 - Utilities.logging_file - INFO - ********Assertion Started***********
 2024-07-10 10:34:21,354 - Utilities.logging_file - INFO - ********Assertion Started***********
+2024-07-10 10:37:54,254 - Utilities.logging_file - INFO - ********Click on the category************
+2024-07-10 10:37:54,254 - Utilities.logging_file - INFO - ********Click on the category************
+2024-07-10 10:37:58,198 - Utilities.logging_file - INFO - ********selecting_the_earbuds************
+2024-07-10 10:37:58,198 - Utilities.logging_file - INFO - ********selecting_the_earbuds************
+2024-07-10 10:37:58,322 - Utilities.logging_file - INFO - ********click_on_filter************
+2024-07-10 10:37:58,322 - Utilities.logging_file - INFO - ********click_on_filter************
+2024-07-10 10:38:00,353 - Utilities.logging_file - INFO - ********select_filter************
+2024-07-10 10:38:00,353 - Utilities.logging_file - INFO - ********select_filter************
+2024-07-10 10:38:00,963 - Utilities.logging_file - INFO - ********enter_the_price************
+2024-07-10 10:38:00,963 - Utilities.logging_file - INFO - ********enter_the_price************
+2024-07-10 10:38:01,260 - Utilities.logging_file - INFO - ********click_on_apply_filter************
+2024-07-10 10:38:01,260 - Utilities.logging_file - INFO - ********click_on_apply_filter************
+2024-07-10 10:38:03,351 - Utilities.logging_file - INFO - ********click_on_filter************
+2024-07-10 10:38:03,351 - Utilities.logging_file - INFO - ********click_on_filter************
+2024-07-10 10:38:03,385 - Utilities.logging_file - INFO - ********click_on_payback************
+2024-07-10 10:38:03,385 - Utilities.logging_file - INFO - ********click_on_payback************
+2024-07-10 10:38:04,155 - Utilities.logging_file - INFO - ********select_the_payback_filter_value************
+2024-07-10 10:38:04,155 - Utilities.logging_file - INFO - ********select_the_payback_filter_value************
+2024-07-10 10:38:04,172 - Utilities.logging_file - INFO - ********Assertion Started***********
+2024-07-10 10:38:04,172 - Utilities.logging_file - INFO - ********Assertion Started***********

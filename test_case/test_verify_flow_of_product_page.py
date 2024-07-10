@@ -26,11 +26,6 @@ class Test_product_filter:
         self.boat.enter_the_price("500","1000")
         self.boat.click_on_apply_filter()
         self.driver.execute_script("window.scrollTo(400,0)")
-        # self.driver.switch_to.frame("ctIframe")
-        # try:
-        #     self.driver.find_element(By.CSS_SELECTOR, "button[id='wzrk-confirm']").click()
-        # except Exception as E:
-        #     print("Exception Occure:- ")
         self.driver.switch_to.default_content()
         time.sleep(2)
         self.boat.click_on_filter()
