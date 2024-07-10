@@ -41,7 +41,7 @@ class Boat_e2e:
 
 
     def selecting_the_earbuds(self):
-        self.driver.save_screenshot("product3.png")
+        self.driver.save_screenshot("../Screenshot/product3.png")
         self.wait.until((EC.element_to_be_clickable((By.XPATH, self.select_earbuds_xpath)))).click()
         self.logs.info("********selecting_the_earbuds************")
 
