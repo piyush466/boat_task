@@ -17,7 +17,7 @@ def setup():
     driver.get("https://www.boat-lifestyle.com/")
     driver.implicitly_wait(10)
     driver.maximize_window()
-    driver.save_screenshot("after.png")
+    driver.save_screenshot("/Screenshot/after.png")
 
     yield driver
     driver.quit()
