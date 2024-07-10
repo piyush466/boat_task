@@ -13,7 +13,7 @@ def setup():
     options.add_argument('--window-size=1950,1080')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome()
     driver.get("https://www.boat-lifestyle.com/")
     driver.implicitly_wait(10)
     driver.maximize_window()
