@@ -20,12 +20,12 @@ class Boat_e2e:
     click_on_playback_xpath = "//button[text()='Playback']"
     select_payback_filter_css = "input[value='50-75 Hrs']"
     product_value_css = "[class='price price--highlight product-card-price']"
-
+    logs = LogGen.logger()
     def __init__(self,driver):
         self.driver = driver
 
         self.wait = WebDriverWait(driver,10)
-        self.logs = LogGen.logger()
+
 
     def click_on_category(self):
         time.sleep(4)

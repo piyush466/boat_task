@@ -36,6 +36,15 @@ class Test_product_filter:
         self.logs.info("********Assertion Started***********")
         assert 500 <= self.convert_to_int <= 1000, "Assertion is not match"
 
+    def test_title_of_page(self, setup):
+        self.driver = setup
+        self.logs = LogGen.logger()
+        self.logs.info("******CHECKING THE TITLE OF PAGE*******")
+        self.title = self.driver.title
+        assert self.title == "Buy Earbuds, Headphones, Earphones at India’s No.1 Earwear Brand: boAt", "TTILE IS NOT MATCH"
+
+
+
 
 
 
